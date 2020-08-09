@@ -1,23 +1,17 @@
 const core = require('@actions/core');
 const axios = require('axios');
 const fs = require('fs');
-const {
-    exec
-} = require("child_process");
 
 var errors = new Array();
 
 try {
     var data = JSON.parse(fs.readFileSync("data.json"));
-
     checkSpelling();
-
 } catch (error) {
     core.setFailed(error.message);
 }
 
 async function checkSpelling() {
-
     for (i = 0; i < 26; i++) {
         var letter = data[(i + 10).toString(36)];
 
@@ -60,7 +54,6 @@ async function checkSpelling() {
             console.log(letter.pflanze[n]);
             await sendRequest(letter.pflanze[n]);
         }
-
     }
 
     console.log("---------------------------------------------");
