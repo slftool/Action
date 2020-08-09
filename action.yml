@@ -1,0 +1,5 @@
+name: 'SLF Acftion'
+description: 'The SLF Action to check our database'
+runs:
+  using: 'node12'
+  main: 'index.js'

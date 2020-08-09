@@ -1,0 +1,24 @@
+{
+  "name": "Action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slftool/Action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slftool/Action/issues"
+  },
+  "homepage": "https://github.com/slftool/Action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "axios": "^0.19.2"
+  }
+}
