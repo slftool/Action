@@ -1,4 +1,4 @@
-name: 'SLF Acftion'
+name: 'SLF Action'
 description: 'The SLF Action to check our database'
 runs:
   using: 'node12'
