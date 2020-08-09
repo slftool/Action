@@ -8,21 +8,6 @@ const {
 var errors = new Array();
 
 try {
-    console.log("Starting languagetool server...");
-    exec('java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 --allow-origin "*"', {
-        cwd: 'LanguageTool'
-    }, (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-    });
-
     var data = JSON.parse(fs.readFileSync("data.json"));
 
     checkSpelling();
@@ -94,7 +79,7 @@ async function checkSpelling() {
 
 async function sendRequest(word) {
     try {
-        let res = await axios.get(encodeURI('http://127.0.0.1:8081/v2/check?language=de-DE&altLanguages=en-US&text=' + word));
+        let res = await axios.get(encodeURI('http://127.0.0.1:8010/v2/check?language=de-DE&altLanguages=en-US&text=' + word));
         let data = res.data;
         if (data.matches.length > 0) {
             errors.push({
