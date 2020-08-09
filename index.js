@@ -94,7 +94,7 @@ async function checkSpelling() {
 
 async function sendRequest(word) {
     try {
-        let res = await axios.get(encodeURI('http://localhost:8081/v2/check?language=de-DE&altLanguages=en-US&text=' + word));
+        let res = await axios.get(encodeURI('http://127.0.0.1:8081/v2/check?language=de-DE&altLanguages=en-US&text=' + word));
         let data = res.data;
         if (data.matches.length > 0) {
             errors.push({
